@@ -1,2 +1,3 @@
 Google Forms Link: https://docs.google.com/forms/d/e/1FAIpQLSftt7w_m-pOlAFfPd9hMjbeEml0xga2nGxUtowkdmvlytIv1Q/viewform?usp=sf_link
 Google Sheets Link: Actually this spreadsheet has sensitive data like personal phone number
+birthdays.csv has the data of 2 of my friend's birthdays in an organised manner( Only for sample )

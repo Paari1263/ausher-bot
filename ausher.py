@@ -3,10 +3,10 @@ import requests
 from datetime import datetime
 import random
 
-
+# This End Point URL is from sheet.best which generates the api for te google sheets.
 SB_ENDPOINT = "https://sheet.best/api/sheets/c0889e23-b519-4214-b4b3-aa455777a646"
-MY_EMAIL = "paaridev1263@gmail.com"
-MY_PASSWORD = "#Mydev1263"
+MY_EMAIL = "example@gmail.com"
+MY_PASSWORD = "your password"
 
 today = datetime.now()
 today_tuple = (today.month, today.day)
@@ -16,6 +16,7 @@ response = requests.get(url=SB_ENDPOINT)
 data = response.json()
 birthday_dict = {}
 
+# Processing the response data from the API.
 for i in data:
     name = i["Name"]
     email = i["Email"]
@@ -26,7 +27,7 @@ for i in data:
 if today_tuple in birthday_dict:
     birthday_person = birthday_dict[today_tuple][0]
     birthday_email = birthday_dict[today_tuple][1]
-    file_path = f"E:\Paari1263\Python\birthday_wisher\letter_templates/letter_{random.randint(1,3)}.txt"
+    file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
         contents = contents.replace("[NAME]", birthday_person)

@@ -6,7 +6,7 @@
 
 
 from datetime import datetime
-import pandas
+import pandas as pd
 import random
 import smtplib
 
@@ -16,16 +16,14 @@ MY_PASSWORD = "#Ampm1263"
 today = datetime.now()
 today_tuple = (today.month, today.day)
 
-
-data = pandas.read_csv("birthdays.csv")
+data = pd.read_csv("E:\Paari1263\Python\birthday_wisher\birthdays.csv")
 birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
-print(birthdays_dict)
 if today_tuple in birthdays_dict:
     birthday_person = birthdays_dict[today_tuple]
     file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        contents = contents.replace("[NAME]", birthday_person["Name"])
+        contents = contents.replace("[NAME]", birthday_person["name"])
 
     with smtplib.SMTP("YOUR EMAIL PROVIDER SMTP SERVER ADDRESS") as connection:
         connection.starttls()

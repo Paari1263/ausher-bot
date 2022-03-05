@@ -1,3 +1,5 @@
+# This version of code accesses the birthday.csv directly , which requires manual entry in the birthday.csv file
+
 #To run and test the code you need to update 4 places:
 # 1. Change MY_EMAIL/MY_PASSWORD to your own details.
 # 2. Go to your email provider and make it allow less secure apps.
@@ -10,8 +12,8 @@ import pandas as pd
 import random
 import smtplib
 
-MY_EMAIL = "paari1263@gmail.com"
-MY_PASSWORD = "#Ampm1263"
+MY_EMAIL = "example@gmail.com"
+MY_PASSWORD = "your password"
 
 today = datetime.now()
 today_tuple = (today.month, today.day)

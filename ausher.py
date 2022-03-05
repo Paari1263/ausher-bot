@@ -1,3 +1,5 @@
+# This version accesses the google sheets by filling the google form link
+
 import smtplib
 import requests
 from datetime import datetime

@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 import random
 
-# This End Point URL is from sheet.best which generates the api for te google sheets.
+# This End Point URL is from sheet.best which generates the api for te google sheets
 SB_ENDPOINT = "https://sheet.best/api/sheets/c0889e23-b519-4214-b4b3-aa455777a646"
 MY_EMAIL = "example@gmail.com"
 MY_PASSWORD = "your password"
@@ -11,12 +11,14 @@ MY_PASSWORD = "your password"
 today = datetime.now()
 today_tuple = (today.month, today.day)
 
+# Test run by printing the commented statement
+# It should print a status code of 200 
 response = requests.get(url=SB_ENDPOINT)
 # print(response.raise_for_status)
 data = response.json()
 birthday_dict = {}
 
-# Processing the response data from the API.
+# Processing the response data from the API
 for i in data:
     name = i["Name"]
     email = i["Email"]
@@ -24,6 +26,7 @@ for i in data:
     day = i["Date of Birth"].split("/")[1]
     birthday_dict[(int(month),int(day))] = [name,email]
 
+# Make sure you have the letter templates
 if today_tuple in birthday_dict:
     birthday_person = birthday_dict[today_tuple][0]
     birthday_email = birthday_dict[today_tuple][1]

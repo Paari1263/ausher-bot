@@ -26,7 +26,7 @@ for i in data:
 if today_tuple in birthday_dict:
     birthday_person = birthday_dict[today_tuple][0]
     birthday_email = birthday_dict[today_tuple][1]
-    file_path = f"E:\Paari1263\Python\birthday_wisher\letter_templates/letter_{random.randint(1,3)}.txt"
+    file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
         contents = contents.replace("[NAME]", birthday_person)

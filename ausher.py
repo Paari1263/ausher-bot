@@ -5,8 +5,8 @@ import random
 
 
 SB_ENDPOINT = "https://sheet.best/api/sheets/c0889e23-b519-4214-b4b3-aa455777a646"
-MY_EMAIL = "paaridev1263@gmail.com"
-MY_PASSWORD = "#Mydev1263"
+MY_EMAIL = "MAIL ID"
+MY_PASSWORD = "MAIL PASSWORD"
 
 today = datetime.now()
 today_tuple = (today.month, today.day)
